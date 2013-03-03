@@ -1,0 +1,72 @@
+/* CSS file */
+
+Button {
+   cornerRadius: 7;
+   /*paddingRight: 16;*/
+   paddingTop: 3;
+   paddingBottom: 3;
+   fillAlphas: 0.7, 0.61, 0.75, 0.65;
+   fillColors: #000000, #999999, #003366, #ffffff;
+   color: #ffffff;
+   textRollOverColor: #ffff33;
+   fontFamily: "Eras Light ITC", arial;
+   fontSize: 14;
+   text-align: left;
+   textIndent:5;
+}
+
+
+LinkButton {
+	
+	textAlign: center;
+    rollOverColor: #93a8ca;
+    color: #ffffff;
+    textRollOverColor: #ffff4a;
+    fontFamily: Arial;
+    fontSize: 11;
+    /*fontWeight: bold;*/
+    /*paddingLeft: 0;*/
+    paddingRight: 1;
+    letterSpacing: 1;
+}
+
+VBox {
+	paddingTop:10; 
+	paddingBottom:10;
+	borderStyle: solid;
+	cornerRadius: 20;
+	borderColor: #757575;
+	horizontalAlign: center;
+	backgroundColor: #333333;
+}
+
+Label {
+	color: #8bb8c7;
+	fontSize: 24;
+	fontFamily: papyrus, georgia;
+	textAlign: center;
+}
+
+.JLLogin {
+	fontFamily: Arial;
+    fontSize: 11;
+    color: #ffffff;
+}
+
+Panel {
+	alpha: 1.0;
+	cornerRadius: 18;
+	borderColor: #000000;	
+}
+
+Form {
+	paddingTop: 10;
+	paddingLeft: 10;
+	paddingBottom: 0;
+	paddingRight: 0;
+	textAlign: left;
+}
+FormItem {
+	fontFamily: papyrus, verdana;
+	fontSize: 14;	
+}

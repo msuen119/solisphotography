@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" backgroundGradientColors="[#000000, #000000]" 
+	xmlns="*" creationComplete="loadData()" width="920" height="560">
+	
+	<mx:Style source="blog.css"/>
+	<mx:states>
+		<mx:State name="addcomment">
+			<mx:SetProperty target="{dg}" name="maxHeight" value="280"/>
+			<mx:RemoveChild target="{linkbutton1}"/>
+			<mx:AddChild relativeTo="{panel1}" position="lastChild">
+					<mx:Canvas id="canvas1">				
+						<mx:Form id="form" width="100%" height="100%">
+				            <mx:FormItem id="user" required="true" label="Name" labelStyleName="message">
+				                <mx:TextInput id="username" width="240" styleName="input"/>
+				            </mx:FormItem>
+				            <mx:FormItem id="text" required="true" label="Message" labelStyleName="message">
+				                <mx:TextArea id="comment" width="240" height="60" styleName="input" maxChars="200"/>
+				            </mx:FormItem>
+				        </mx:Form>
+				    </mx:Canvas>
+			</mx:AddChild>
+			<mx:AddChild relativeTo="{panel1}" position="lastChild">
+				<mx:HBox width="340" horizontalAlign="right">
+					<mx:Button id="addbutton" label="Add" click="AddComment();"/>
+					<mx:Button label="Cancel" click="this.currentState=''"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<!--<mx:AddChild relativeTo="{canvas1}" position="before">
+					<mx:Spacer id="spacer" height="2"/>							
+			</mx:AddChild>-->
+		</mx:State>
+	</mx:states>
+	
+	<mx:transitions>
+		<mx:Transition id="toAdd" fromState="*" toState="addcomment">
+			<mx:Sequence targets="{[dg, linkbutton1, canvas1]}">
+				<mx:RemoveChildAction/>
+				<mx:Resize target="{dg}"/>
+				<mx:AddChildAction/>
+			</mx:Sequence>
+		</mx:Transition>
+		<mx:Transition id="toExists" fromState="addcomment" toState="*">
+			<mx:Sequence targets="{[dg, linkbutton1, canvas1]}">
+				<mx:RemoveChildAction/>
+				<mx:Resize target="{dg}"/>
+				<mx:AddChildAction/>
+			</mx:Sequence>
+		</mx:Transition>
+	</mx:transitions>
+	<mx:Style source="comments.css"/>	
+	<mx:Script>
+		<![CDATA[
+			import mx.rpc.http.mxml.HTTPService;		
+			import mx.events.ValidationResultEvent;
+			import mx.controls.Alert;
+			
+			private function loadData(): void {
+				var params:Object = new Object();
+				params["action"] = "retrieve";
+				httpsrv.send(params);
+			}
+			
+			private function ValidateForm():Boolean {
+				if( nameReq.validate().type == ValidationResultEvent.VALID
+				&&	commentReq.validate().type == ValidationResultEvent.VALID )
+					return true;
+				else
+					Alert.show("Please enter all required fields");
+					return false;
+			}
+						
+			private function AddComment(): void {
+				if( ValidateForm() == true ) {
+					var params:Object = new Object();
+					params["name"] = username.text;
+					params["comment"] = comment.text;
+					params["action"] = "insert";
+					httpsrv.send(params);
+					username.text = "";
+					comment.text = "";
+					loadData();
+					this.currentState='';
+				}
+				else
+					this.currentState = "addcomment";
+        	}
+
+		]]>
+	</mx:Script>
+		
+   	
+   	<mx:HTTPService id="httpsrv" url="blog.php" method="POST"/>
+    
+    <mx:Validator id="nameReq" required="true" source="{username}" property="text"/>
+    <mx:Validator id="commentReq" required="true" source="{comment}" property="text"/>
+    
+    <mx:HBox width="100%" height="100%">
+    	<mx:VBox horizontalAlign="center" width="50%">
+    		<mx:Label text="Hawaii     2009" styleName="albumTitle"/>
+    		<mx:Spacer height="30"/>
+    		<mx:Image source="IMG_131.jpg" width="400" height="275" maintainAspectRatio="true" scaleContent="true"/>
+    		<mx:Spacer height="5%"/>
+    		<mx:HBox width="100%" horizontalAlign="left">
+    			<mx:LinkButton label="HTML" click="navigateToURL(new URLRequest('http://solisphotography.com/gallery/Hawaii09/sb-H/index.html'), '_self')" styleName="link"/>
+    			<mx:LinkButton label="FLASH" click="navigateToURL(new URLRequest('http://solisphotography.com/gallery/Hawaii09/sb-S/index.html'), '_self')" styleName="link"/>
+    		</mx:HBox>
+    	</mx:VBox>
+   		<mx:Spacer width="10"/>
+	 	<mx:VBox height="90%" width="50%" id="panel1" paddingTop="50" paddingRight="10">
+	 		<mx:DataGrid id="dg" selectable="false" variableRowHeight="true" wordWrap="true" resizableColumns="false" draggableColumns="false" 
+	 			width="90%" height="100%" dataProvider="{httpsrv.lastResult.html.body.comments.comment}">
+	            <mx:columns>
+	                <mx:DataGridColumn width="30" dataField="user" sortable="false" headerText="FROM"/>
+	                <mx:DataGridColumn width="80" dataField="message" sortable="false" headerText="MESSAGE BOARD"/>
+	                <mx:DataGridColumn width="30" dataField="date" textAlign="center" headerText="DATE"/>
+	            </mx:columns>
+	        </mx:DataGrid>
+	 		<mx:Spacer height="10"/>
+	 		<mx:LinkButton label="Add Message" id="linkbutton1" click="currentState='addcomment'" width="120"/> 
+	 	</mx:VBox>
+	</mx:HBox>   
+</mx:Application>

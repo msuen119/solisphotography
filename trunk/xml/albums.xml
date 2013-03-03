@@ -1,0 +1,343 @@
+<albums>
+	<year id="2006 and Older">
+		<album>
+			<title>Napa Wine Tasting Thanksgiving '06</title>
+			<html>Napa/Wine-H/index.html</html>
+			<flash>Napa/Wine-S/index.html</flash>
+		</album>
+		<album>
+			<title>Our Wedding '06</title>
+			<albumpage>yes</albumpage>
+			<html>Wedding/index.html</html>
+		</album>
+		<album>
+			<title>Hawaii Honeymoon '06</title>
+			<html>Hawaii2006/Hawaii-H/index.html</html>
+			<flash>Hawaii2006/Hawaii-H/index.html</flash>
+		</album>
+		<album>
+			<title>Christmas in New York '05</title>
+			<html>NewYork2005/NY-H/index.html</html>
+			<flash>NewYork2005/NY-S/index.html</flash>
+		</album>
+		<album>
+			<title>Australia '05'</title>
+			<html>Australia2005/Australia-H/index.html</html>
+			<flash>Australia2005/Australia-S/index.html</flash>
+		</album>
+		<album>
+			<title>Yosemite '05</title>
+			<html>yose2005/Yose-H/index.html</html>
+			<flash>yose2005/Yose-S/index.html</flash>
+		</album>
+		<album>
+			<title>Nicaragua '04</title>
+			<html>Nicaragua2004/Nic-H/index.html</html>
+			<flash>Nicaragua2004/Nic-S/index.html</flash>
+		</album>
+		<album>
+			<title>Aruba '04</title>
+			<html>aruba2004/Aruba-H/index.html</html>
+			<flash>aruba2004/Aruba-S/index.html</flash>
+		</album>
+		<album>
+			<title>New Orleans '04'</title>
+			<html>NewOrleans2004/NewOrleans-H/index.html</html>
+			<flash>NewOrleans2004/NewOrleans-S/index.html</flash>
+		</album>
+		<album>
+			<title>Santa Barbara '04'</title>
+			<html>SB2004/SB-H/index.html</html>
+			<flash>SB2004/SB-S/index.html</flash>
+		</album>
+		<album>
+			<title>Yosemite '03'</title>
+			<html>yose2003/Yosemite-H/index.html</html>
+			<flash>yose2003/Yosemite-S/index.html</flash>
+		</album>
+	</year>
+	<year id="2007">
+		<album>
+			<title>China / Hong Kong</title>
+			<html>china2007/China-H/index.html</html>
+			<flash>china2007/China-S/index.html</flash>
+		</album>
+		<album>
+			<title>Chinese New Year</title>
+			<html>CNY2007/CNY-H/index.html</html>
+			<flash>CNY2007/CNY-S/index.html</flash>
+		</album>
+		 <album>
+			<title>Livermore Wineries</title>
+			<html>Livermore/Wine-H/index.html</html>
+			<flash>Livermore/Wine-S/index.html</flash>
+		</album>
+		<album>
+			<title>Cuesta Tennis</title>
+			<albumpage>yes</albumpage>
+			<html>Tennis/index.html</html>
+		</album>
+		<album>
+			<title>Yosemite Memorial Weekend</title>
+			<albumpage>yes</albumpage>
+			<html>yose2007/index.html</html>
+		</album>
+		<album>
+			<title>Yvonne's Graduation</title>
+			<albumpage>yes</albumpage>
+			<authentication>yes</authentication>
+			<login>moo</login>
+			<password>grad</password>
+			<html>graduate/index.php</html>
+		</album>
+		<album>
+			<title>Santa Barbara Wine Tasting</title>
+			<html>sb2007/SB-H/index.html</html>
+			<flash>sb2007/SB-S/index.html</flash>
+		</album>
+		<album>
+			<title>Jeff and Louisa's Wedding</title>
+			<albumpage>yes</albumpage>
+			<authentication>yes</authentication>
+			<login>JL</login>
+			<password>wedding</password>
+			<html>JLWedding/index.php</html>
+		</album>
+		<album>
+			<title>San Francisco 49ers</title>
+			<albumpage>yes</albumpage>
+			<html>niners/index.html</html>
+		</album>
+		<album>
+			<title>Salinas Airshow (Blue Angels)</title>
+			<html>Airshow2007/airshow-H/index.html</html>
+			<flash>Airshow2007/airshow-S/index.html</flash>
+		</album>
+		<album>
+			<title>Dave and Patricia</title>
+			<html>Dave/party-H/index.html</html>
+		</album>
+		<album>
+			<title>Christmas in Lake Tahoe</title>
+			<albumpage>yes</albumpage>
+			<html>Tahoe2007/index.html</html>
+		</album>
+	</year>
+	<year id="2008">
+	 	<album>
+			<title>Vancouver / Seattle</title>
+			<html>Seattle2007/Seattle-H/index.html</html>
+			<flash>Seattle2007/Seattle-S/index.html</flash>
+		</album>
+		<album>
+			<title>Santa Barbara</title>
+			<html>SB2008/SB-H/index.html</html>
+			<flash>SB2008/SB-S/index.html</flash>
+		</album>
+		<album>
+			<title>Golden Gate Park with Mia</title>
+			<html>GoldenGate/Park-H/index.html</html>
+			<flash>GoldenGate/Park-S/index.html</flash>
+		</album>
+		<album>
+			<title>Monterey / Big Sur</title>
+			<html>Monterey08/Monterey-H/index.html</html>
+			<flash>Monterey08/Monterey-S/index.html</flash>
+		</album>
+		<album>
+			<title>San Francisco 49ers</title>
+			<albumpage>yes</albumpage>
+			<html>niners08/index.html</html>
+		</album>
+		<album>
+			<title>Hawaii (Kona)</title>
+			<html>hawaii08/island-H/index.html</html>
+			<flash>hawaii08/island-S/index.html</flash>
+		</album>
+		<album>
+			<title>Cuesta Team Livermore Wine Tasting</title>
+			<html>Tennis08/wine-H/index.html</html>
+			<flash>Tennis08/wine-S/index.html</flash>
+		</album>
+		<album>
+			<title>Mia's 1st Birthday</title>
+			<html>Mia08/bday-H/index.html</html>
+			<flash>Mia08/bday-S/index.html</flash>
+		</album>
+		<album>
+			<title>Jen and Un's Wedding</title>
+			<albumpage>yes</albumpage>
+			<authentication>yes</authentication>
+			<login>rubyhills</login>
+			<password>wedding</password>
+			<html>JenandUn/index.php</html>
+		</album>
+		<album>
+			<title>Grand Canyon</title>
+			<html>grandcanyon/az-H/index.html</html>
+			<flash>grandcanyon/az-S/index.html</flash>
+		</album>
+		<album>
+			<title>Laetitia Winery</title>
+			<html>Laetitia08/wine-H/index.html</html>
+			<flash>Laetitia08/wine-S/index.html</flash>
+		</album>
+	</year>
+	<year id="2009">
+		<album>
+			<title>Costa Rica / Nicaragua</title>
+			<html>CostaRica_Nicaragua09/CRN-H/index.html</html>
+			<flash>CostaRica_Nicaragua09/CRN-S/index.html</flash>
+		</album>
+		<album>
+			<title>Chinese New Year</title>
+			<html>CNY09/CNY-H/index.html</html>
+			<flash>CNY09/CNY-S/index.html</flash>
+		</album>
+		<album>
+			<title>Santa Barbara</title>
+			<html>SB2009/SB-H/index.html</html>
+			<flash>SB2009/SB-S/index.html</flash>
+		</album>
+		<album>
+			<title>San Francisco Aquarium</title>
+			<html>SFAquarium/Aquarium-H/index.html</html>
+			<flash>SFAquarium/Aquarium-S/index.html</flash>
+		</album>
+		<album>
+			<title>Alaska Cruise</title>
+			<albumpage>yes</albumpage>
+			<authentication>no</authentication>
+			<html>Alaska09/index.html</html>
+		</album>
+		<album>
+			<title>Baby Cassidy</title>
+			<html>Cassidy/baby-H/index.html</html>
+			<flash>Cassidy/baby-S/index.html</flash>
+		</album>
+		<album>
+			<title>Lake Tahoe</title>
+			<html>Tahoe09/hiking-H/index.html</html>
+			<flash>Tahoe09/hiking-S/index.html</flash>
+		</album>
+		<album>
+			<title>Hawaii</title>
+			<albumpage>yes</albumpage>
+			<authentication>no</authentication>
+			<html>Hawaii09/index.html</html>
+		</album>
+		<album>
+			<title>Christmas</title>
+			<html>Xmas09/xmas-H/index.html</html>
+			<flash>Xmas09/xmas-S/index.html</flash>
+		</album>
+	</year>
+	<year id="2010">
+		<album>
+			<title>Mexican Riviera</title>
+			<albumpage>yes</albumpage>
+			<authentication>no</authentication>
+			<html>Mexico10/index.html</html>
+		</album>
+		<album>
+			<title>Baby Cassidy</title>
+			<html>Baby10/Cassidy-H</html>
+			<flash>Baby10/Cassidy-S</flash>
+		</album>
+		<album>
+			<title>Janice and Henry's Wedding</title>
+			<albumpage>yes</albumpage>
+			<authentication>no</authentication>
+			<html>JaniceAndHenry/index.html</html>
+		</album>
+		<album>
+			<title>Christmas in LA</title>
+			<html>Xmas2010/la-H</html>
+			<flash>Xmas2010/la-S</flash>
+		</album>
+	</year>
+	<year id="2011">
+		<album>
+			<title>Heather and Tyler's Wedding</title>
+			<albumpage>yes</albumpage>
+			<authentication>no</authentication>
+			<html>Tyler2011/Wedding-H/index.html</html>
+		</album>
+		<album>
+			<title>Sammy Solis</title>
+			<authentication>yes</authentication>
+			<login>sammy</login>
+			<password>ss61311</password>
+			<html>Samuel2011/baby-H/index.php</html>
+			<flash>Samuel2011/baby-S/index.php</flash>
+		</album>
+		<album>
+			<title>European Vacation</title>
+			<authentication>no</authentication>
+			<html>Europe/vacation-H/index.html</html>
+			<flash>Europe/vacation-S/index.html</flash>
+		</album>
+		<album>
+			<title>Sonoma Wine Tasting</title>
+			<authentication>no</authentication>
+			<html>Sonoma2011/sb-H/index.html</html>
+			<flash>Sonoma2011/sb-S/index.html</flash>
+		</album>
+		<album>
+			<title>Stanford 4.5 Tennis</title>
+			<albumpage>yes</albumpage>
+			<authentication>no</authentication>  
+			<html>Tennis2011/index.html</html>
+		</album>
+		<album>
+			<title>Nassau, Bahamas</title>
+			<authentication>no</authentication>  
+			<html>Bahamas2011/Nassau-H/index.html</html>
+			<flash>Bahamas2011/Nassau-S/index.html</flash>
+		</album>
+		<album>
+			<title>Paxton's Wedding</title>
+			<authentication>no</authentication>  
+			<html>PaxtonAndConnie/Wedding-H/index.html</html>
+			<flash>PaxtonAndConnie/Wedding-S/index.html</flash>
+		</album>        
+	</year>
+	<year id="2012">
+		<album>
+			<title>Amy and Adam's Wedding</title>
+			<authentication>no</authentication>
+			<html>AmyAdam2012/wedding-H/index.html</html>
+			<flash>AmyAdam2012/wedding-S/index.html</flash>
+		</album>
+		<album>
+			<title>Cassidy and Trystan</title>
+			<authentication>no</authentication>
+			<html>CassAndTrystan2012/photoshoot-H/index.html</html>
+			<flash>CassAndTrystan2012/photoshoot-S/index.html</flash>
+		</album>
+		<album>
+			<title>Trystan's Red Egg and Cass's B-day</title>
+			<authentication>no</authentication>
+			<html>TrystanRedEgg2012/party-H/index.html</html>
+			<flash>TrystanRedEgg2012/party-S/index.html</flash>
+		</album>
+		<album>
+			<title>Sammy's 1st B-Day</title>
+			<authentication>no</authentication>
+			<html>Sammy2012/bday-H/index.html</html>
+			<flash>Sammy2012/bday-S/index.html</flash>
+		</album>
+		<album>
+			<title>Barbara and Dan's Wedding</title>
+			<authentication>no</authentication>
+			<html>BarbaraAndDan2012/Wedding-H/index.html</html>
+			<flash>BarbaraAndDan2012/Wedding-S/index.html</flash>
+		</album>
+		<album>
+			<title>Lorraine and Tim's Wedding</title>
+			<authentication>no</authentication>
+			<html>LorraineAndTim2012/wedding-H/index.html</html>
+			<flash>LorraineAndTim2012/wedding-S/index.html</flash>
+		</album>
+	</year>
+</albums>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" backgroundGradientColors="[#000000, #000000]" 
+	xmlns="*" height="450" creationComplete="loadData()">
+	<mx:states>
+		<mx:State name="addcomment">
+			<mx:SetProperty target="{dg}" name="maxHeight" value="230"/>
+			<mx:RemoveChild target="{linkbutton1}"/>
+			<mx:AddChild relativeTo="{panel1}" position="lastChild">
+					<mx:Canvas id="canvas1">				
+						<mx:Form id="form" width="100%" height="100%">
+				            <mx:FormItem id="user" required="true" label="Name">
+				                <mx:TextInput id="username" width="240"/>
+				            </mx:FormItem>
+				            <mx:FormItem id="text" required="true" label="Comment">
+				                <mx:TextArea id="comment" width="240" height="40" maxChars="100"/>
+				            </mx:FormItem>
+				        </mx:Form>
+				    </mx:Canvas>
+			</mx:AddChild>
+			<mx:AddChild relativeTo="{panel1}" position="lastChild">
+				<mx:HBox width="340" horizontalAlign="right">
+					<mx:Button id="addbutton" label="Submit" click="AddComment();"/>
+					<mx:Button label="Cancel" click="this.currentState=''"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<!--<mx:AddChild relativeTo="{canvas1}" position="before">
+					<mx:Spacer id="spacer" height="2"/>							
+			</mx:AddChild>-->
+		</mx:State>
+	</mx:states>
+	
+	<mx:transitions>
+		<mx:Transition id="toAdd" fromState="*" toState="addcomment">
+			<mx:Sequence targets="{[dg, linkbutton1, canvas1]}">
+				<mx:RemoveChildAction/>
+				<mx:Resize target="{dg}"/>
+				<mx:AddChildAction/>
+			</mx:Sequence>
+		</mx:Transition>
+		<mx:Transition id="toExists" fromState="addcomment" toState="*">
+			<mx:Sequence targets="{[dg, linkbutton1, canvas1]}">
+				<mx:RemoveChildAction/>
+				<mx:Resize target="{dg}"/>
+				<mx:AddChildAction/>
+			</mx:Sequence>
+		</mx:Transition>
+	</mx:transitions>
+	<mx:Style source="comments.css"/>	
+	<mx:Script>
+		<![CDATA[
+			import mx.rpc.http.mxml.HTTPService;		
+			import mx.events.ValidationResultEvent;
+			import mx.controls.Alert;
+			
+			private function loadData(): void {
+				var params:Object = new Object();
+				params["action"] = "retrieve";
+				httpsrv.send(params);
+			}
+			
+			private function ValidateForm():Boolean {
+				if( nameReq.validate().type == ValidationResultEvent.VALID
+				&&	commentReq.validate().type == ValidationResultEvent.VALID )
+					return true;
+				else
+					Alert.show("Please enter all required fields");
+					return false;
+			}
+						
+			private function AddComment(): void {
+				if( ValidateForm() == true ) {
+					var params:Object = new Object();
+					params["name"] = username.text;
+					params["comment"] = comment.text;
+					params["action"] = "insert";
+					httpsrv.send(params);
+					username.text = "";
+					comment.text = "";
+					loadData();
+					this.currentState='';
+				}
+				else
+					this.currentState = "addcomment";
+        	}
+
+		]]>
+	</mx:Script>
+		
+   	
+   	<mx:HTTPService id="httpsrv" url="comments.php" method="POST"/>
+    
+    <mx:Validator id="nameReq" required="true" source="{username}" property="text"/>
+    <mx:Validator id="commentReq" required="true" source="{comment}" property="text"/>
+          
+ 	<mx:VBox height="400" width="700" id="panel1">
+ 		<mx:DataGrid id="dg" selectable="false" variableRowHeight="true" wordWrap="true" resizableColumns="false" draggableColumns="false" 
+ 			width="100%" height="100%" dataProvider="{httpsrv.lastResult.html.body.comments.comment}">
+            <mx:columns>
+                <mx:DataGridColumn width="150" dataField="user" sortable="false" headerText="NAME"/>
+                <mx:DataGridColumn width="400" dataField="message" sortable="false" headerText="COMMENTS"/>
+                <mx:DataGridColumn width="150" dataField="date" textAlign="center" headerText="DATE"/>
+            </mx:columns>
+        </mx:DataGrid>
+ 		<mx:Spacer height="10"/>
+ 		<mx:LinkButton label="Sign Guestbook" id="linkbutton1" click="currentState='addcomment'" width="120"/> 
+ 	</mx:VBox>
+	
+</mx:Application>
