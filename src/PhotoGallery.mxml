@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" width="900" height="500" layout="absolute" initialize="albumxml.send()" horizontalAlign="center">
+
+	<mx:Style source="gallery.css"/>
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.IViewCursor;
+			import mx.collections.ArrayCollection;
+			import mx.rpc.events.ResultEvent;
+			import mx.controls.Alert;
+			
+			import year;
+			import album;
+			
+			[Bindable]
+			public var archive:year;
+			[Bindable]
+			public var twothousandseven:year;
+			[Bindable]
+			public var twothousandeight:year;			
+			[Bindable]
+			public var twothousandnine:year			
+			
+			[Bindable]
+			public var section:ArrayCollection;
+			
+			private function loadTitles():void {
+							
+				archive = section.getItemAt(0) as year;
+				twothousandseven = section.getItemAt(1) as year;
+				twothousandeight = section.getItemAt(2) as year;
+				twothousandnine = section.getItemAt(3) as year;		
+			}		
+			
+			public function getTitles(event:ResultEvent):void  {
+				
+				var result:ArrayCollection = event.result.albums.year;
+				var temp:ArrayCollection = new ArrayCollection();
+				var cursor:IViewCursor = result.createCursor();
+				
+				while( !cursor.afterLast ) {
+					temp.addItem(new year(cursor.current));
+					cursor.moveNext();
+				}
+				section = temp;
+				loadTitles();
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Model id="xml" source="../xml/albums.xml"/>
+	
+	<mx:HTTPService id="albumxml" url="../xml/albums.xml" result="getTitles(event)"/>
+	
+	<mx:Accordion id="accordion" height="100%" width="100%" color="0x323232" styleName="container" selectedIndex="3">
+		
+		<mx:VBox label="{archive.collection}">
+			<mx:Spacer height="7"/>
+			<mx:TileList dataProvider="{archive.albums}" itemRenderer="albumbutton" rowHeight="35" columnWidth="450" columnCount="2" height="315" styleName="collection"/>
+			<mx:Spacer height="5"/>
+		</mx:VBox>
+		<mx:VBox label="{twothousandseven.collection}">
+			<mx:Spacer height="7"/>
+			<mx:TileList dataProvider="{twothousandseven.albums}" itemRenderer="albumbutton" rowHeight="35" columnWidth="450" columnCount="2" height="315" styleName="collection"/>
+		</mx:VBox>
+		<mx:VBox label="{twothousandeight.collection}">
+			<mx:Spacer height="7"/>
+			<mx:TileList dataProvider="{twothousandeight.albums}" itemRenderer="albumbutton" rowHeight="35" columnWidth="450" columnCount="2" height="315" styleName="collection"/>
+		</mx:VBox>
+		<mx:Canvas label="{twothousandnine.collection}">
+			<mx:Spacer height="7"/>
+			<mx:TileList dataProvider="{twothousandnine.albums}" itemRenderer="albumbutton" rowHeight="35" columnWidth="450" columnCount="2" height="315" styleName="collection"/>
+			<!--<mx:Button label="Costa Rica / Nicaragua" width="400" height="30" styleName="albumlabel" x="5" y="10"/>
+			<mx:LinkButton x="281" y="12" label="HTML" click="navigateToURL(new URLRequest('CostaRica_Nicaragua09/CRN-H/index.html'),'_self')" styleName="link"/>
+			<mx:LinkButton x="330" y="12" label="FLASH" click="navigateToURL(new URLRequest('CostaRica_Nicaragua09/CRN-S/index.html'),'_self')" styleName="link"/>	-->
+		</mx:Canvas>
+	</mx:Accordion>
+	
+</mx:Application>

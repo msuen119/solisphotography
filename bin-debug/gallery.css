@@ -1,0 +1,110 @@
+/* CSS file */
+
+Application
+{
+	backgroundColor: #212122;
+}
+Label.year
+{
+	fontFamily: Papyrus;
+	fontSize: 30;
+	color: #276F7E;
+	textAlign: center;
+}
+Button.albumlabel
+{
+	cornerRadius: 7;
+	fillAlphas: 0.7, 0.61, 0.75, 0.65;
+	fillColors: #000000, #999999, #003366, #ffffff;
+	fontFamily: "Eras Light ITC", arial;
+	color: #FFFFFF;
+	textRollOverColor: #ffff33;
+	fontSize: 14;
+	textAlign: left;
+
+}
+LinkButton.link
+{
+	fontFamily: Arial;
+	fontSize: 11;
+	color: #FFFFFF;
+	textRollOverColor: #FFFF4A;
+	rollOverColor: #93A8CA;
+	letterSpacing: 1;
+}
+Accordion.container
+{
+	borderStyle: none;
+	borderThickness: 0;
+	cornerRadius: 13;
+	backgroundColor: #111010;
+	headerStyleName: accordionHeader;
+	borderColor: #232425;
+}
+TileList.collection
+{
+	backgroundColor: #111010;
+	rollOverColor: #111010;
+	selectionColor: #111010;
+	borderStyle: none;
+	paddingLeft: 20;
+	paddingRight: 20;
+}
+
+@font-face
+{
+	fontFamily: Papyrus;
+	fontWeight: normal;
+	fontStyle: normal;
+	src: local("Papyrus");
+}
+@font-face
+{
+	fontFamily: Freshbot;
+	fontWeight: bold;
+	fontStyle: normal;
+	src: local("Freshbot");
+}
+@font-face
+{
+	fontFamily: HUNTSON;
+	fontWeight: bold;
+	fontStyle: normal;
+	src: local("HUNTSON");
+}
+@font-face
+{
+	fontFamily: OLIVEOIL;
+	fontWeight: bold;
+	fontStyle: normal;
+	src: local("OLIVEOIL");
+}
+@font-face
+{
+	fontFamily: OLIVEOIL;
+	fontWeight: normal;
+	fontStyle: normal;
+	src: local("OLIVEOIL");
+}
+@font-face
+{
+	fontFamily: HANA;
+	fontWeight: bold;
+	fontStyle: normal;
+	src: local("HANA");
+}
+.accordionHeader
+{
+	fontFamily: papyrus, georgia;
+	fontSize: 20;
+	paddingTop: 0;
+	paddingBottom: 0;
+	cornerRadius: 7;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #100F0F, #576079, #575775, #BBBBD3;
+	color: #8bb8c7;
+	textSelectedColor: #FFFFFF;
+	backgroundColor: #171616;
+	backgroundAlpha: 0.74;
+	borderColor: #1F2021;
+}

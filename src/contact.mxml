@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" backgroundGradientColors="[#000000, #000000]" height="450">
+	<mx:Style source="styles.css"/>
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.rpc.http.mxml.HTTPService;
+			import mx.events.ValidationResultEvent;
+			
+			private function validateForm(): Boolean {
+				if( vname.validate().type == ValidationResultEvent.VALID
+				&&	vmessage.validate().type == ValidationResultEvent.VALID )
+					return true;
+				else
+					return false;
+			}
+			
+			private function send():void {
+				if( validateForm() == true ) {
+					var params:Object = new Object();
+					params["name"] = username.text;
+					params["email"] = email.text;
+					params["message"] = message.text;
+					httpsrv.send(params);
+					username.text = "";
+					email.text = "";
+					message.text = "";
+					Alert.show("Your Message Has Been Sent");
+				}
+				else
+					Alert.show("Please enter all required fields");
+			}
+		]]>
+	</mx:Script>
+	<mx:HTTPService id="httpsrv" url="contact.php" method="POST"/>
+	<mx:Validator id="vname" source="{username}" required="true" property="text"/>
+	<mx:Validator id="vmessage" source="{message}" required="true" property="text"/>
+	<mx:VBox width="400" height="400" horizontalAlign="left" paddingLeft="15" cornerRadius="10">
+		<mx:Form>
+			<mx:FormItem label="Name" height="20" required="true">
+				<mx:TextInput id="username" width="215" fontSize="12"/>
+			</mx:FormItem>
+			<mx:FormItem label="Email" height="20">
+				<mx:TextInput id="email" width="215" fontSize="12"/>
+			</mx:FormItem>
+			<mx:FormItem label="Message" required="true">
+				<mx:TextArea id="message" width="215" height="98" fontSize="12"/>
+			</mx:FormItem>
+			<mx:Spacer height="5"/>
+			<mx:FormItem>
+				<mx:Button label="Send" click="send()"/>
+			</mx:FormItem>
+		</mx:Form>
+	<mx:VBox horizontalAlign="center" width="375" borderThickness="0">
+
+		<mx:Spacer height="15"/>
+		<mx:Label fontFamily="Verdana" fontSize="14" text="OR Email us at:"/>
+		<mx:Label fontFamily="Verdana" fontSize="14" text="Marsha: marshdogg@gmail.com"/>
+		<mx:Label fontFamily="Verdana" fontSize="14" text="Julio: juliosolis@yahoo.com"/>
+			</mx:VBox>
+	</mx:VBox>
+	
+</mx:Application>

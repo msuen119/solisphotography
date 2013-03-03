@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- http://blog.flexexamples.com/2007/10/29/passing-parameters-to-an-httpservice/ -->
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+        layout="vertical"
+        verticalAlign="middle"
+        backgroundColor="white">
+
+    <mx:Script>
+        <![CDATA[
+            import mx.controls.Alert;
+            import mx.events.ValidationResultEvent;
+            import mx.utils.StringUtil;
+
+            private function submit_click(evt:MouseEvent):void {
+                var result:ValidationResultEvent = stringValidator.validate();
+                var params:Object = {};
+
+                lbl.text = "";
+
+                switch (result.type) {
+                    case ValidationResultEvent.INVALID:
+                        Alert.show(result.message, result.type);
+                        break;
+                    case ValidationResultEvent.VALID:
+                        params["name"] = StringUtil.trim(firstName.text);
+                        httpServ.send(params);
+                        break;
+                }
+            }
+        ]]>
+    </mx:Script>
+
+    <mx:StringValidator id="stringValidator"
+            source="{firstName}"
+            property="text"
+            minLength="2"
+            maxLength="{firstName.maxChars}" />
+
+    <mx:HTTPService id="httpServ">
+        <!--<mx:resultFormat>flashvars</mx:resultFormat>
+        <mx:url>http://www.flash-mx.com/mm/greeting.cfm</mx:url>-->
+        <!--<mx:result>lbl.text = httpServ.lastResult.welcomeMessage;</mx:result>
+        <mx:fault>Alert.show(event.toString(), event.type);</mx:fault>-->
+    </mx:HTTPService>
+
+    <mx:ApplicationControlBar dock="true">
+        <mx:Form>
+            <mx:FormItem label="Name:" required="true"
+                    direction="horizontal">
+                <mx:TextInput id="firstName"
+                    maxChars="20" />
+                <mx:Button label="Submit"
+                        click="submit_click(event);" />
+            </mx:FormItem>
+        </mx:Form>
+    </mx:ApplicationControlBar>
+
+    <mx:Label id="lbl" fontSize="32" />
+
+</mx:Application>

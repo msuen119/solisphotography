@@ -1,0 +1,53 @@
+/* CSS file */
+LinkButton.link
+{
+	color: #F3EF98;
+	fontSize: 14;
+	rollOverColor: #000000;
+	textRollOverColor: #C89818;
+	selectionColor: #000000;
+	textSelectedColor: #C89818;
+	paddingLeft: 100;
+	paddingTop: 2;
+	paddingRight: 7;
+	paddingBottom: 2;
+	fontWeight: bold;
+	textAlign: left;
+	fontFamily: "Eras Light ITC", arial;
+
+}
+
+Label.albumTitle
+{
+	fontFamily: Papyrus, Arial;
+	fontSize: 22;
+	color: #B8D8F1;
+}
+
+TextInput.input
+{
+	fontSize: 12;
+	textAlign: left;
+	color: #000000;
+	cornerRadius: 2;
+	borderThickness: 1;
+	borderColor: #92A7B6;
+	borderStyle: solid;
+	paddingLeft: 5;
+	fontWeight: bold;
+}
+FormItem.message
+{
+	color: #B8D8F1;
+	fontSize: 18;
+	fontFamily: Papyrus,"Eras Light ITC", Verdana;
+	textAlign: left;
+	fontWeight: bold;
+}
+@font-face
+{
+	fontFamily: Papyrus;
+	fontWeight: normal;
+	fontStyle: normal;
+	src: local("Papyrus");
+}

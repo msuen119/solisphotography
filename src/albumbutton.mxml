@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml">
+
+	<mx:Script>
+		<![CDATA[
+		
+			import flash.net.URLRequest;
+			import flash.net.navigateToURL;
+			import mx.managers.PopUpManager;
+			import mx.containers.TitleWindow;
+			import mx.controls.Alert;
+			
+			public function gotoAlbum(type:String):void {
+				
+				var url:String;
+				if( type == 'html')
+					url = data.html;
+				else {
+					if( data.flash == null ) {
+						Alert.show("Sorry, FLASH is not available for this album.  Please use the HTML link");
+						return;
+					}
+					else
+						url = data.flash;
+				}
+				var request:URLRequest = new URLRequest(url);
+				navigateToURL(request,'_self');
+			}
+			
+			public function albumpage():void {
+				if( data.cover == null )
+					this.currentState = 'links';
+			}
+			
+			public function toalbum():void {
+				if( data.cover != null ) {
+					if( data.cover == 'yes' ) {
+						if( data.authentication != null && data.authentication == 'yes') {
+							showAuthenticationWindow();
+						}
+						else {
+							var url:String = data.html;
+							var request:URLRequest = new URLRequest(url);
+							navigateToURL(request,'_self');
+						}
+					}
+				}					
+			}
+			
+			public function showAuthenticationWindow():void {
+				var loginWindow:LoginWindow = LoginWindow(PopUpManager.createPopUp(this, LoginWindow, true));
+				loginWindow.album = data.title;
+				loginWindow.location = data.html;
+				loginWindow.x = 230;
+				loginWindow.y = 100;
+				
+			}
+			
+		]]>
+	</mx:Script>
+	
+
+	<mx:states>
+		<mx:State name="links">
+			<mx:AddChild relativeTo="{canvas}" position="lastChild">
+				<mx:LinkButton x="281" y="4" label="HTML" click="gotoAlbum('html')" mouseOver="this.currentState='links'" styleName="link"/>
+			</mx:AddChild>
+			<mx:AddChild relativeTo="{canvas}" position="lastChild">
+				<mx:LinkButton x="330" y="4" label="FLASH" click="gotoAlbum('flash')" mouseOver="this.currentState='links'" styleName="link"/>
+			</mx:AddChild>
+		</mx:State>	
+	</mx:states>
+
+	<mx:Canvas id="canvas" height="32" mouseOut="this.currentState=''">
+		<mx:Button label="{data.title}" width="400" height="30" styleName="albumlabel" mouseOver="albumpage()" click="toalbum()"/>	
+	</mx:Canvas>
+	
+	
+</mx:HBox>

@@ -1,0 +1,67 @@
+/* CSS file */
+Button {
+   cornerRadius: 7;  
+   paddingTop: 3;
+   paddingBottom: 3;
+   fillAlphas: 0.7, 0.61, 0.75, 0.65;
+   fillColors: #000000, #999999, #003366, #ffffff;
+   color: #8bb8c7;
+   textRollOverColor: #ffff33;
+   fontFamily: "Eras Light ITC", arial;
+   fontSize: 14;
+   text-align: center;
+}
+
+
+LinkButton {
+	
+	rollOverColor: #6c8598;
+   	selectionColor: #8aa3b3;
+   	color: #ffffff;
+  	textRollOverColor: #ffff00;
+   	textSelectedColor: #ffff00;
+    fontFamily: "Eras Light ITC", arial;
+    fontSize: 12;
+    textAlign: center;
+
+}
+
+VBox {
+	horizontalAlign: center;
+	cornerRadius: 20;
+
+}
+
+Label {
+	color: #8bb8c7;
+	fontSize: 20;
+	fontFamily: papyrus, georgia;
+	textAlign: center;
+}
+
+DataGrid {
+
+	paddingTop: 5;
+	paddingBottom: 5;
+	cornerRadius: 20;
+	alternatingItemColors: #5c5b5b, #404141;
+   	headerColors: #211c1c, #8b96c7;
+   	rollOverColor: #a5b2bc;
+	color: #ffffff;
+	borderThickness: 0;
+	font-size: 12;
+	headerStyleName: "mydataGridHeaderStyle";
+}
+
+.mydataGridHeaderStyle {
+   color: #ffffff;
+   fontFamily: "Trajan Pro", Times;
+   fontSize: 12;
+   textAlign: center;
+}
+
+Panel {
+	alpha: 1.0;
+	cornerRadius: 18;
+	borderColor: #000000;	
+}
