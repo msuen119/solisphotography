@@ -340,4 +340,12 @@
 			<flash>LorraineAndTim2012/wedding-S/index.html</flash>
 		</album>
 	</year>
+	<year id="2013">
+	    <album>
+            <title>Annalyn and Toai's Wedding</title>
+            <authentication>no</authentication>
+            <html>AnnalyanToai2013/wedding-H/index.html</html>
+            <flash>AnnalynToai2013/wedding-S/index.html</flash>
+        </album>
+	</year>
 </albums>
