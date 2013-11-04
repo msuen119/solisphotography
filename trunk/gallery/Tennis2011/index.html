@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Solis Photography</title>
+<link href="../../styles.css" rel="stylesheet" type="text/css" />
+<link href="tennis.css" rel="stylesheet" type="text/css" />
+<link href="../../scripts/shadowbox/shadowbox.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../scripts/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="../../scripts/shadowbox/shadowbox.js"></script>
+<script type="text/javascript" src="http://www.photodex.com/presenter.js"></script>
+<style type="text/css">
+</style>
+</head>
+<script>
+
+/*  Shadowbox.init({ overlayOpacity   :   0.8,
+                    overlayColor    :   "#FFFFFF"
+                 }, setupDemos); */
+
+function setupDemos() {
+  Shadowbox.setup('a[title="Nationals"]', {
+    height:     480,
+    width:      640,
+    flashVars:  {
+        clip_id:    "32193782",
+        autoplay:   "1"
+    }
+  });
+
+  Shadowbox.setup('a[title="Champtions"]', {
+        height:     480,
+        width:      640,
+        flashVars:  {
+            clip_id:    "77016483",
+            autoplay:   "1"
+        }
+      });
+}
+
+/* Initialize experience video. */
+Shadowbox.init({overlayOpacity : 0.8,
+    overlayColor   : "#FFFFFF",
+    players        : ["swf", "img", "html","iframe", "px"],
+    flashParams    : {bgcolor: "#000000"}
+    }, setupDemos);
+
+
+
+var shadowBoxContent = function(playerType, url, height, width) {
+    Shadowbox.open({
+        /*PhotodexObject("ProShow","objectname",url,400,300);
+        PresenterControls("objectname",400);*/
+        content:    url,
+        player:     playerType,
+        height:     height,
+        width:      width,
+        handleOversize : "none",
+        viewportPadding: 0
+
+    })}
+
+
+</script>
+
+<body>
+<div align="center">
+  <div class="content">
+    <div class="clogo"><img src="../../images/Alaska.jpg" alt="banner"/></div>
+    <div class="navbar">
+      <ul>
+        <li><a href="../../index.html">HOME</a> </li>
+        <li><a href="../index.html">PHOTO GALLERY</a></li>
+        <li><a href="../../Aboutus.html">ABOUT US</a> </li>
+        <li><a href="../../comments.html" class="style6">GUESTBOOK</a></li>
+      </ul>
+    </div> <!-- end navbar -->
+    <div class="tennis">
+      <table width='900' border=0>
+        <tr>
+          <td colspan="2" align='center'><h2 span class='trajan'>Stanford Women's 4.5 National Champs</h2><br></td>
+        </tr>
+        <tr valign='bottom'>
+          <td align="center" class="trajan">Sectionals</td>
+          <td align="center" class="trajan">What A Journey!  Stanford Taube 4.5 Wins The <br>2011 USTA National Championship<br /> by NorcalTennisDaily<br></td>
+        </tr>
+        <tr>
+          <td align="center" class="photo">
+            <img src='sectional.jpg' height="170"/><br>
+            <a href="Stanford-H/index.html" class="album">HTML</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="Stanford-S/index.html" class="album">FLASH</a>
+          </td>
+          <td align="center" class="photo">
+            <a href="http://vimeo.com/moogaloop.swf" title="Nationals"><img src="video.jpg" height="200"</a>
+          </td>
+        </tr>
+        <tr valign="bottom">
+          <td align="center" class="trajan">Nationals</td>
+          <td align="center" class="trajan">Journey to Nationals</br> by Marsha Solis</td>
+        </tr>
+        <tr>
+          <td align="center" class="photo">
+            <img src="national.jpg" height="170" /></br>
+            <a href="Nationals-H/index.html" class="album">HTML</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="Nationals-S/index.html" class="album">FLASH</a>
+          </td>
+          <td align="center" class="photo">
+            <a href="http://vimeo.com/moogaloop.swf" title="Champtions"><img src="show1.jpg" height="200"</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="footer"><div class="email"><a href="../../contact.html" class="email">Contact Us</a></div></div>
+</div>
+</body>
+</html>
