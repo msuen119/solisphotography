@@ -1,0 +1,44 @@
+body {
+    background: black;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+.navbar-header {
+    background-color: #333333;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.navbar-nav a {
+    color: #FFFFFF;
+    font-size: 12px;
+}
+.navbar-nav > li > a:hover {
+    background-color: #333333;
+    color: #ECDC13;
+}
+.navbar-nav > li > a:focus, .navbar-nav a.current {
+    background-color: #333333;
+    color:#83A7CF
+}
+.nav-tabs > li > a:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+.nav-tabs > li > a:focus {
+    background-color: #000000;
+    color:##FFFFFF;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    background-color: #000;
+    color: #FFF;
+    cursor: default;
+}
+.thumbnail {
+    background-color: #000000;
+    border: none;
+}
